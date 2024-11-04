@@ -8,25 +8,14 @@ from bs4 import BeautifulSoup
 
 def main():
 
-    browser = webdriver.Chrome(executable_path='./chromedriver')
-    link = 'https://thispersonnotexist.org'
+    # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium
+    options = webdriver.ChromeOptions()
+    binary_yandex_driver_file = 'yandexdriver.exe'
+    service = webdriver.chrome.service.Service(executable_path=binary_yandex_driver_file)
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.get('https://thispersonnotexist.org')
+    driver.quit()
 
-    ans = req.get(link, proxies=None).text
-    soup = BeautifulSoup(ans, 'lxml')
-
-    # находим блок с картинками
-    block = soup.find('div', class_='tabs')
-    all_image = block.find_all('div', attrs={'xtpx': 'R'})
-
-    print(block)
-    for img in all_image:
-        image_link = img.find('a').get('href')
-        extension = image_link.headers['content-type'].split('/')[-1]
-        filename = gener_filename(extension)
-
-        with open(os.path.join('image', filename), 'wb') as file:
-            file.write(ans.content)
-        print(f'images: {1} finished..')
 
 def gener_filename(file_extension):
     tmp = str(int(time.time()))
@@ -37,7 +26,6 @@ def gener_filename(file_extension):
 
 
 if __name__ == '__main__':
-    start = perf_counter()
     main()
-    print(f'time: {(perf_counter() - start):.02f}')
+
 
