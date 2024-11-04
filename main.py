@@ -9,12 +9,9 @@ from bs4 import BeautifulSoup
 def main():
 
     # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium
-    options = webdriver.ChromeOptions()
-    binary_yandex_driver_file = 'yandexdriver.exe'
-    service = webdriver.chrome.service.Service(executable_path=binary_yandex_driver_file)
-    driver = webdriver.Chrome(service=service, options=options)
-    driver.get('https://thispersonnotexist.org')
-    driver.quit()
+    browser = webdriver.Firefox()
+    browser.get('https://thispersonnotexist.org')
+    time.sleep(20)
 
 
 def gener_filename(file_extension):
