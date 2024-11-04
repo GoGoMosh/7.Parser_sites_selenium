@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
+    browser = webdriver.Chrome(executable_path='./chromedriver')
     link = 'https://thispersonnotexist.org'
 
     ans = req.get(link, proxies=None).text
