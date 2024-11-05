@@ -11,7 +11,7 @@ def main():
     # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium
     browser = webdriver.Firefox()
     browser.get('https://thispersonnotexist.org')
-    time.sleep(20)
+    time.sleep(15)
 
 
 def gener_filename(file_extension):
