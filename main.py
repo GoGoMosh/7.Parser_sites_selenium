@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
-    # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium
+    # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработки
     browser = webdriver.Firefox()
     browser.get('https://thispersonnotexist.org')
     time.sleep(15)
