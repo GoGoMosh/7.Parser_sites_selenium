@@ -8,7 +8,7 @@ import time
 def main():
 
     # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработки
-    browser = webdriver.Firefox() # С FireFox легче работат
+    browser = webdriver.Firefox() # С FireFox легче работает
     browser.get('https://thispersonnotexist.org')
     time.sleep(15)
 
