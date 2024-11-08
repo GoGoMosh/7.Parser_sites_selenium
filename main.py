@@ -11,6 +11,7 @@ def main():
     browser = webdriver.Firefox() # С FireFox легче работает, потому что сильно гибок в настройках
     browser.get('https://thispersonnotexist.org')
     time.sleep(15)
+    browser.get('https://google.com')
 
 
 if __name__ == '__main__':
