@@ -7,6 +7,12 @@ import time
 
 def main():
 
+    browser = webdriver.Firefox()
+    browser.get('https://www.youtube.com')
+
+    button = browser.find_element( 'xpath' , 'style-scope ytd-rich-grid-renderer')
+    print(button)
+    """
     # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработки
     browser = webdriver.Firefox() # С FireFox легче работает, потому что сильно гибок в настройках
     browser.get('https://thispersonnotexist.org')
@@ -15,6 +21,7 @@ def main():
     browser.save_screenshot('1.png')
     browser.refresh()
     browser.quit()
+    """
 
 if __name__ == '__main__':
     main()
