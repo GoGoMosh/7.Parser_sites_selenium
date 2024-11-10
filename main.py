@@ -8,10 +8,16 @@ import time
 def main():
 
     browser = webdriver.Firefox()
-    browser.get('https://www.youtube.com')
 
-    button = browser.find_element( 'xpath' , 'style-scope ytd-rich-grid-renderer')
-    print(button)
+
+    try:
+        browser.get('https://google.com')
+        time.sleep(5)
+    except Exception:
+        print(Exception)
+    finally:
+        browser.close()
+        browser.quit()
     """
     # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработки
     browser = webdriver.Firefox() # С FireFox легче работает, потому что сильно гибок в настройках
