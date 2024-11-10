@@ -12,6 +12,7 @@ def main():
     browser.get('https://thispersonnotexist.org')
     time.sleep(15)
     browser.get('https://google.com')
+    browser.save_screenshot('1.png')
 
 
 if __name__ == '__main__':
