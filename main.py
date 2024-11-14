@@ -18,7 +18,7 @@ def main():
         browser.close()
         browser.quit()
     """
-    # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработкиbb
+    # Т. к. веб-страница загружает картинки динамически, то придётся использовать selenium для обработкиb
     browser = webdriver.Firefox() # С FireFox легче работает, потому что сильно гибок в настройках
     browser.get('https://thispersonnotexist.org')
     time.sleep(5)
